@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Доступ запрещён</title>
+    <style>
+        body {
+            background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
+            color: #444;
+            font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
+            text-shadow: 0 1px 0 #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+            font: 120%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
+            text-shadow: 0 1px 0 #fff;
+        }
+    </style>
+</head>
+<title>Access Denied</title>
+<script>
+    setTimeout(function() {
+        window.location.href = '/login';
+    }, 2000); // Перенаправление пользователя на главную страницу через 2 секунды
+</script>
+<body>
+<h1>У Вас недостаточно прав доступа</h1>
+</body>
+</html>
