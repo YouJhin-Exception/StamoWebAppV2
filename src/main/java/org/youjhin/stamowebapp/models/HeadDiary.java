@@ -9,17 +9,21 @@ import lombok.Getter;
 import java.sql.Timestamp;
 
 
-@Getter
-@Entity(name = "headDiaryDataTable")
+/**
+ * Сущность "Дневник головной боли", представляющая запись в дневнике пользователя.
+ * Содержит детальную информацию о каждом случае головной боли.
+ */
+@Getter // Генерирует геттеры для всех полей класса
+@Entity(name = "headDiaryDataTable") // Определяет класс как сущность JPA и указывает имя таблицы в базе данных
 public class HeadDiary {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long diaryId;
+    @Id // Указывает, что поле является первичным ключом
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Конфигурация генерации уникального значения для первичного ключа
+    private long diaryId; // Уникальный идентификатор записи в дневнике
 
-    private long chatId;
+    private long chatId; // Идентификатор чата пользователя, к которому относится эта запись
 
-    private Timestamp dateOfFilling;
+    private Timestamp dateOfFilling; // Дата и время заполнения записи
 
     private String howMuchHurtScale;
 
@@ -36,6 +40,4 @@ public class HeadDiary {
     private String preventionHeadache;
 
     private String takeMedication;
-
-
 }

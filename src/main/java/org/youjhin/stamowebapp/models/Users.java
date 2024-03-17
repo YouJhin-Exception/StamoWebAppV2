@@ -8,25 +8,28 @@ import lombok.Getter;
 import java.sql.Timestamp;
 
 
-@Getter
-@Entity(name = "usersDataTable")
+/**
+ * Сущность "Пользователь", представляющая пользователя в системе.
+ * Содержит основную информацию о пользователе, включая его идентификационные данные и метаданные регистрации.
+ */
+@Getter // Аннотация Lombok для автоматической генерации геттеров для всех полей класса.
+@Entity(name = "usersDataTable") // Аннотация JPA, определяющая класс как сущность и назначающая ему имя таблицы в базе данных.
 public class Users {
 
-    @Id
-    private long chatId;
+    @Id // Аннотация, указывающая, что поле является уникальным идентификатором сущности в базе данных.
+    private long chatId; // Идентификатор чата пользователя, используется как первичный ключ.
 
-    private String firstName;
+    private String firstName; // Имя пользователя взятое из телеграмма
 
-    private String lastName;
+    private String lastName; // Фамилия пользователя взятое из телеграмма
 
-    private String userName;
+    private String userName; // Имя пользователя в системе взятое из телеграмма
 
-    private Timestamp registeredAt;
+    private Timestamp registeredAt; // Дата и время регистрации пользователя в системе.
 
-    private String lifeLastName;
+    private String lifeLastName; // "Реальная" фамилия пользователя, может использоваться для внутренних целей, которое задается при регистрации в боте(регистрация внутри бота для ведения дневника)
 
-    private String lifeFirstName;
+    private String lifeFirstName; // "Реальное" имя пользователя, может использоваться для внутренних целей, которое задается при регистрации в боте(регистрация внутри бота для ведения дневника)
 
-    private String age;
-
+    private String age; // Возраст пользователя. Хранится в виде строки для гибкости представления данных, которое задается при регистрации в боте(регистрация внутри бота для ведения дневника)
 }
