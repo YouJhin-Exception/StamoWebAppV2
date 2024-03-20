@@ -71,6 +71,10 @@
         <input type="password" id="password" name="password" required>
     </div>
 
+    <div th:if="${loginError}" class="error-message" style="color: red;">
+        Неверный логин или пароль.
+    </div>
+
     <div class="buttons">
         <input type="submit" value="Log in">
         <button onclick="window.location.href='/register'">Registration</button>
